@@ -2,6 +2,12 @@
 
 <p>Profile Page For <%= @band.name %></p>
 
+<p>Albums</p>
+<% albums = Album.where(band_id: @band.id);%>
+<% albums.each do |album| %>
+  <p><a href="<%= album_url(album) %>"><%= album.title %></a></p>
+<% end %>
+
 <a href="<%= edit_band_url %>">Edit Band</a>
 
 <form class="" action="<%= band_url(@band) %>" method="post">

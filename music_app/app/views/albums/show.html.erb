@@ -1,0 +1,27 @@
+<h2>This is the page for displaying an existing album (Album#show)!</h2>
+
+<p>Profile Page For <%= @album.title %></p>
+
+<table>
+  <tr>
+    <th>Year</th><th><%= @album.year %></th>
+  </tr>
+  <tr>
+    <th>Band</th><th><%= @album.band.name %></th>
+  </tr>
+  <tr>
+    <th>Album Type</th><th><%= @album.album_type %></th>
+  </tr>
+</table>
+
+<a href="<%= edit_album_url %>">Edit Album</a>
+
+<form class="" action="<%= album_url(@album) %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="submit" value="Delete Album">
+</form>
+
+
+<a href="<%= band_url(@album.band) %>">Back to Band</a>

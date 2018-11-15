@@ -1,0 +1,31 @@
+<h2>This is the page for creating new albums (from Album#new)!</h2>
+
+
+<form class="" action="<%= albums_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="title">Title</label>
+    <input type="text" name="album[title]" id="title" value="">
+  <br/>
+
+  <label for="year">Year</label>
+    <input type="text" name="album[year]" id="year" value="">
+  <br/>
+
+  <label for="band">Band</label>
+    <select name="album[band_id]">
+      <option selected disabled>Choose Band</option>
+      <% bands = Band.all %>
+      <% bands.each do |band| %>
+        <option value="<%= band.id %>"><%= band.name %></option>
+      <% end %>
+    </select>
+  <br/>
+
+  <label for="album_type">Album Type</label>
+    <input type="radio" name="album[live_album]" value="true">Live<br>
+    <input type="radio" name="album[live_album]" value="false">Studio<br>
+  <br/>
+
+  <input type="submit" value="Create Album">
+</form>

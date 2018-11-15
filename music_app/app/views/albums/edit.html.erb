@@ -1,0 +1,32 @@
+<h2>This is the page for editing existing albums (from Album#edit)!</h2>
+
+
+<form class="" action="<%= album_url %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="title">Title</label>
+    <input type="text" name="album[title]" id="title" value="<%= @album.title %>">
+  <br/>
+
+  <label for="year">Year</label>
+    <input type="text" name="album[year]" id="year" value="<%= @album.year %>">
+  <br/>
+
+  <label for="band">Band</label>
+    <select name="album[band_id]">
+      <option disabled>Choose Band</option>
+      <% bands = Band.all %>
+      <% bands.each do |band| %>
+        <option value="<%= band.id %>" <%= "selected" if @album.band == band %>><%= band.name %></option>
+      <% end %>
+    </select>
+  <br/>
+
+  <label for="album_type">Album Type</label>
+    <input type="radio" name="album[live_album]" value="true" <%= "checked" if @album.live_album == true %>>Live<br>
+    <input type="radio" name="album[live_album]" value="false" <%= "checked" if @album.live_album == false %>>Studio<br>
+  <br/>
+
+  <input type="submit" value="Update Album">
+</form>
