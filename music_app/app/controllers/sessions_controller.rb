@@ -1,11 +1,15 @@
 class SessionsController < ApplicationController
-  helper_method :current_user
 
   def new #login screen
     render :new
   end
 
   def create #log in user
+    @current_user = User.find_by_credentials(params[:user][:email], params[:user][:password])
+    if @current_user
+      log_in_user!(@current_user)
+      redirect_to user_url(@current_user)
+    end
   end
 
   def destroy #log out user
@@ -16,15 +20,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  def current_user
-    @current_user ||= User.find_by(session_token: params[:user][:session_token])
-  end
 
-  def logged_in?
-    current_user.nil? == false
-  end
-
-  def log_in_user!(user)
-  end
 
 end
