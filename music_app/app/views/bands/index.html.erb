@@ -1,0 +1,6 @@
+<h2>This page shows all the bands (from Band#index)</h2>
+
+<% bands = Band.all %>
+<% bands.each do |band| %>
+  <p><a href="<%= band_url(band) %>"><%= band.name %></a></p>
+<% end %>

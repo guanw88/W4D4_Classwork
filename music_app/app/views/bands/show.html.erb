@@ -1,0 +1,12 @@
+<h2>This is the page for displaying an existing band (Band#show)!</h2>
+
+<p>Profile Page For <%= @band.name %></p>
+
+<a href="<%= edit_band_url %>">Edit Band</a>
+
+<form class="" action="<%= band_url(@band) %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="submit" value="Delete Band">
+</form>
