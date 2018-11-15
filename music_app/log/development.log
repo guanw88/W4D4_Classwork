@@ -1,0 +1,361 @@
+  [1m[35m (404.5ms)[0m  [1m[35mCREATE DATABASE "music_app_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (323.4ms)[0m  [1m[35mCREATE DATABASE "music_app_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181115171301)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181115171301_create_users.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20181115171301_create_users.rb:10
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20181115171301_create_users.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181115171301"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-15 17:14:51.306870"], ["updated_at", "2018-11-15 17:14:51.306870"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guanwang/.rbenv/versions/2.3.1/bin/annotate:23
+Started GET "/" for 127.0.0.1 at 2018-11-15 09:42:42 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guanwang/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/guanwang/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/guanwang/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 23ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-15 09:42:47 -0800
+
+SyntaxError - compile error:
+
+Started POST "/__better_errors/509c3eab2d769971/variables" for 127.0.0.1 at 2018-11-15 09:42:47 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:42:54 -0800
+
+LoadError - Unable to autoload constant UsersController, expected /Users/guanwang/Desktop/AppAcademy/Classwork/W4D4/music_app/app/controllers/users_controller.rb to define it:
+
+Started POST "/__better_errors/7917eda1e95c90ba/variables" for 127.0.0.1 at 2018-11-15 09:42:54 -0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4505726345591715405)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:46:07 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/guanwang/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+
+SyntaxError - compile error:
+
+Started POST "/__better_errors/69dc54b1e302c9b2/variables" for 127.0.0.1 at 2018-11-15 09:46:07 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:46:10 -0800
+
+LoadError - Unable to autoload constant UsersController, expected /Users/guanwang/Desktop/AppAcademy/Classwork/W4D4/music_app/app/controllers/users_controller.rb to define it:
+
+Started POST "/__better_errors/c783dece275be2b7/variables" for 127.0.0.1 at 2018-11-15 09:46:10 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:47:43 -0800
+
+LoadError - Unable to autoload constant UsersController, expected /Users/guanwang/Desktop/AppAcademy/Classwork/W4D4/music_app/app/controllers/users_controller.rb to define it:
+
+Started POST "/__better_errors/d8913d2ae60ad8f0/variables" for 127.0.0.1 at 2018-11-15 09:47:43 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:48:24 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 285ms (Views: 272.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:48:34 -0800
+
+SyntaxError - compile error:
+
+Started POST "/__better_errors/c1a77cd8af2c8382/variables" for 127.0.0.1 at 2018-11-15 09:48:35 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:48:37 -0800
+
+LoadError - Unable to autoload constant UsersController, expected /Users/guanwang/Desktop/AppAcademy/Classwork/W4D4/music_app/app/controllers/users_controller.rb to define it:
+
+Started POST "/__better_errors/8b5b182bc9454275/variables" for 127.0.0.1 at 2018-11-15 09:48:37 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:48:38 -0800
+
+LoadError - Unable to autoload constant UsersController, expected /Users/guanwang/Desktop/AppAcademy/Classwork/W4D4/music_app/app/controllers/users_controller.rb to define it:
+
+Started POST "/__better_errors/e2bb59c973bf4da9/variables" for 127.0.0.1 at 2018-11-15 09:48:38 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:48:52 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:49:01 -0800
+
+SyntaxError - compile error:
+
+Started POST "/__better_errors/15b5fe1f48fa687a/variables" for 127.0.0.1 at 2018-11-15 09:49:01 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:49:02 -0800
+
+LoadError - Unable to autoload constant UsersController, expected /Users/guanwang/Desktop/AppAcademy/Classwork/W4D4/music_app/app/controllers/users_controller.rb to define it:
+
+Started POST "/__better_errors/576091a7cda00c68/variables" for 127.0.0.1 at 2018-11-15 09:49:02 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:49:03 -0800
+
+LoadError - Unable to autoload constant UsersController, expected /Users/guanwang/Desktop/AppAcademy/Classwork/W4D4/music_app/app/controllers/users_controller.rb to define it:
+
+Started POST "/__better_errors/fec61784431ab70f/variables" for 127.0.0.1 at 2018-11-15 09:49:03 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:49:22 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:49:28 -0800
+
+SyntaxError - compile error:
+
+Started POST "/__better_errors/fb4f5c23d2affb9d/variables" for 127.0.0.1 at 2018-11-15 09:49:28 -0800
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:49:35 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 15.6ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:49:37 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:50:48 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 19.6ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:50:49 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 09:57:33 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-15 09:57:43 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Qfs7VaeGthjrTyO+7+IALF7aoYzE+xRCg/TvdHjNKWAdLOQWkqR4K/l3ykITliH55Sq5RXFztfIoPqE03K1K9w==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nSWaAK59mTJAyDBn-kRMxw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 3.7ms)
+
+
+
+NoMethodError - undefined method `password' for #<User:0x007f9bb268a498>
+Did you mean?  password=:
+  app/controllers/users_controller.rb:5:in `create'
+
+Started POST "/__better_errors/cd33cf8e9c9ca34a/variables" for 127.0.0.1 at 2018-11-15 09:57:43 -0800
+Started POST "/__better_errors/cd33cf8e9c9ca34a/eval" for 127.0.0.1 at 2018-11-15 09:57:59 -0800
+Started POST "/users" for 127.0.0.1 at 2018-11-15 09:58:41 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Qfs7VaeGthjrTyO+7+IALF7aoYzE+xRCg/TvdHjNKWAdLOQWkqR4K/l3ykITliH55Sq5RXFztfIoPqE03K1K9w==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "jjqj8qJuBZoA-WkdtgEdGQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "test@email.com"], ["password_digest", "$2a$10$qSV/hALTHIeqYBn6U3vszuee2RStBRti76ZOi64UqX2xes81wcAJ2"], ["session_token", "jjqj8qJuBZoA-WkdtgEdGQ"], ["created_at", "2018-11-15 17:58:41.975114"], ["updated_at", "2018-11-15 17:58:41.975114"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 85ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 09:58:41 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `user' for #<UsersController:0x007f9bb52c5b98>:
+  app/controllers/users_controller.rb:20:in `show'
+
+Started POST "/__better_errors/3dfb9f0fd5057210/variables" for 127.0.0.1 at 2018-11-15 09:58:42 -0800
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 09:59:33 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 208ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `id' for #<UsersController:0x007f9bad6d4390>:
+  app/controllers/users_controller.rb:20:in `show'
+
+Started POST "/__better_errors/4d5d2e05257c145b/variables" for 127.0.0.1 at 2018-11-15 09:59:33 -0800
+Started POST "/__better_errors/4d5d2e05257c145b/eval" for 127.0.0.1 at 2018-11-15 09:59:41 -0800
+Started POST "/__better_errors/4d5d2e05257c145b/eval" for 127.0.0.1 at 2018-11-15 09:59:43 -0800
+Started POST "/__better_errors/4d5d2e05257c145b/eval" for 127.0.0.1 at 2018-11-15 09:59:45 -0800
+Started POST "/__better_errors/4d5d2e05257c145b/eval" for 127.0.0.1 at 2018-11-15 09:59:50 -0800
+Started POST "/__better_errors/4d5d2e05257c145b/eval" for 127.0.0.1 at 2018-11-15 09:59:54 -0800
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 10:00:10 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 44ms (Views: 30.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 10:02:24 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-11-15 10:02:50 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-15 10:03:00 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"5cwsxwQT/wRxzzk1wXFsCToYiShj/17DTjQ5Pb1Bz2+5G/OEMTExN2P30Mk9BU3cgeiR4dZ3/3Pl/nd9GSGs+A==", "user"=>{"email"=>"user2@test.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user2@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "H2nF3J8Veynxn62t-Opbyw"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "user2@test.com"], ["password_digest", "$2a$10$z5TBSjsCq2vGiE4UMDFqj.IGiGy7NDbjtR2UTdCu/UUcTioz5aVqi"], ["session_token", "H2nF3J8Veynxn62t-Opbyw"], ["created_at", "2018-11-15 18:03:00.785106"], ["updated_at", "2018-11-15 18:03:00.785106"]]
+  ↳ app/controllers/users_controller.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 64ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-11-15 10:03:00 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-11-15 10:03:04 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-11-15 10:09:54 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/session/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/sessions/new" for 127.0.0.1 at 2018-11-15 10:10:02 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]:
+  app/views/sessions/new.html.erb:4:in `_app_views_sessions_new_html_erb__2186263850983828344_70153342205880'
+  app/controllers/sessions_controller.rb:3:in `new'
+
+Started POST "/__better_errors/daf85c507e61a833/variables" for 127.0.0.1 at 2018-11-15 10:10:02 -0800
+Started POST "/__better_errors/daf85c507e61a833/eval" for 127.0.0.1 at 2018-11-15 10:10:15 -0800
+Started GET "/sessions/new" for 127.0.0.1 at 2018-11-15 10:12:45 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
