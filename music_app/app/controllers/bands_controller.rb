@@ -1,5 +1,6 @@
 class BandsController < ApplicationController
-
+  before_action :redirect_to_signup_if_not_logged_in
+  
   def index #show all bands
     render :index
   end

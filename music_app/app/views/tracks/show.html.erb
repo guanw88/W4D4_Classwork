@@ -1,0 +1,30 @@
+<h2>This is the page for displaying an existing track (Track#show)!</h2>
+
+<p>Profile Page For <%= @track.title %></p>
+
+<table>
+  <tr>
+    <th>Track Number</th><th><%= @track.ord %></th>
+  </tr>
+  <tr>
+    <th>Album</th><th><%= @track.album.title %></th>
+  </tr>
+  <tr>
+    <th>Track Type</th><th><%= @track.track_type %></th>
+  </tr>
+  <tr>
+    <th>Lyrics</th><th><%= @track.lyrics %></th>
+  </tr>
+</table>
+
+<a href="<%= edit_track_url %>">Edit Track</a>
+
+<form class="" action="<%= track_url(@track) %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="submit" value="Delete Track">
+</form>
+
+
+<a href="<%= album_url(@track.album) %>">Back to Album</a>

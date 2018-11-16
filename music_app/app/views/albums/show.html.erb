@@ -12,6 +12,19 @@
   <tr>
     <th>Album Type</th><th><%= @album.album_type %></th>
   </tr>
+  <tr>
+    <th>Tracks</th><th><ul>
+      <% tracks = @album.tracks %>
+      <% if tracks.empty? %>
+        <%= "This album has no tracks." %>
+      <% else %>
+        <% tracks.each do |track| %>
+          <li><a href="<%= track_url(track) %>"><%= track.title %></a></li>
+        <% end %>
+      <% end %>
+      <a href="<%= new_album_track_url(@album) %>">Add Track</a>
+    </ul></th>
+  </tr>
 </table>
 
 <a href="<%= edit_album_url %>">Edit Album</a>

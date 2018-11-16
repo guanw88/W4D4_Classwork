@@ -14,10 +14,10 @@
 
   <label for="band">Band</label>
     <select name="album[band_id]">
-      <option selected disabled>Choose Band</option>
+      <option disabled>Choose Band</option>
       <% bands = Band.all %>
       <% bands.each do |band| %>
-        <option value="<%= band.id %>"><%= band.name %></option>
+        <option value="<%= band.id %>" <%= "selected" if params[:band_id].to_i == band.id %>><%= band.name %></option>
       <% end %>
     </select>
   <br/>

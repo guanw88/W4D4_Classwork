@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_action :redirect_to_signup_if_not_logged_in
 
   def create #create new album
     @album = Album.new(album_params)

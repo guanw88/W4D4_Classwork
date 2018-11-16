@@ -4,10 +4,14 @@
 
 <p>Albums</p>
 <% albums = Album.where(band_id: @band.id);%>
-<% albums.each do |album| %>
-  <p><a href="<%= album_url(album) %>"><%= album.title %></a></p>
+<% if albums.empty? %>
+  <%= "This band has no albums." %>
+<% else %>
+  <% albums.each do |album| %>
+    <p><a href="<%= album_url(album) %>"><%= album.title %></a></p>
+  <% end %>
 <% end %>
-
+<a href="<%= new_band_album_url(@band) %>">Add Album</a>
 <a href="<%= edit_band_url %>">Edit Band</a>
 
 <form class="" action="<%= band_url(@band) %>" method="post">
