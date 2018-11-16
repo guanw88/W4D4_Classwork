@@ -17,6 +17,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 5px solid red;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 5px solid red;
 }
 
 header h1 {
@@ -28,4 +36,21 @@ header h1 {
 
 header p {
   margin-right: 20px;
+}
+
+input[type=submit] {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+input[type=submit]:hover {
+  background-color: red;
 }

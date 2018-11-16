@@ -1,6 +1,19 @@
-<h2>This is the page for displaying an existing band (Band#show)!</h2>
+<section>
+  <h2><%= @band.name %> Profile Page</h2>
 
-<p>Profile Page For <%= @band.name %></p>
+<form class="" action="<%= edit_band_url %>" method="get">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="submit" value="Edit Band">
+</form>
+
+<form class="" action="<%= band_url(@band) %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="submit" value="Delete Band">
+</form>
+</section>
 
 <p>Albums</p>
 <% albums = Album.where(band_id: @band.id);%>
@@ -12,11 +25,3 @@
   <% end %>
 <% end %>
 <a href="<%= new_band_album_url(@band) %>">Add Album</a>
-<a href="<%= edit_band_url %>">Edit Band</a>
-
-<form class="" action="<%= band_url(@band) %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-  <input type="submit" value="Delete Band">
-</form>
