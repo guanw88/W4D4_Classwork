@@ -1,0 +1,13 @@
+<p>Notes</p>
+
+<table>
+  <tr><th>Text</th><th>Submitter</th></tr>
+  <% notes = @track.notes%>
+  <% if notes.empty? %>
+    <tr><th>This track has no notes.</th><th></th></tr>
+  <% else %>
+    <% notes.each do |note| %>
+      <tr><th><%= note.text %></th><th><%= note.user.email %></th> </tr>
+    <% end %>
+  <% end %>
+</table>

@@ -17,6 +17,11 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :notes,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Note
+
   attr_reader :password
 
   def self.generate_session_token
